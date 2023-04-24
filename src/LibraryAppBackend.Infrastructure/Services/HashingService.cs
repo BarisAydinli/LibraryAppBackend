@@ -20,7 +20,6 @@ public class HashingService : IHashingService
         
         passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
         passwordSalt = hmac.Key;
-        return;
     }
 
     public bool VerifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt)

@@ -1,6 +1,7 @@
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 
-namespace LibraryAppBackend.API.Options;
+namespace LibraryAppBackend.Infrastructure.Options;
 
 public class JwtOptionsSetup : IConfigureOptions<JwtOptions>
 {

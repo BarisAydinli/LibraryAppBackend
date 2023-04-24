@@ -11,4 +11,9 @@
       <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\LibraryAppBackend.Application\LibraryAppBackend.Application.csproj" />
+      <ProjectReference Include="..\LibraryAppBackend.Domain\LibraryAppBackend.Domain.csproj" />
+    </ItemGroup>
+
 </Project>

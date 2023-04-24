@@ -1,8 +1,4 @@
-using LibraryAppBackend.API.Options;
-
 var builder = WebApplication.CreateBuilder(args);
-
-builder.Services.ConfigureOptions<JwtOptionsSetup>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

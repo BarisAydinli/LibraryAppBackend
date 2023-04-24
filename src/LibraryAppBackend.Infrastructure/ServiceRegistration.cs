@@ -1,6 +1,6 @@
 ﻿using System.Text;
-using LibraryAppBackend.API.Options;
 using LibraryAppBackend.Application.Services;
+using LibraryAppBackend.Infrastructure.Options;
 using LibraryAppBackend.Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,11 +23,13 @@ public static class ServiceRegistration
                 ValidateIssuerSigningKey = true,
                 ValidIssuer = jwtOptions.Value.Issuer,
                 ValidAudience = jwtOptions.Value.Audience,
-                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtOptions.Value.SecretKey))
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtOptions.Value.SecurityKey))
             };
         });
         
-        services.AddScoped<ITokenService, TokenService>();
+        services.ConfigureOptions<JwtOptionsSetup>();
+
+        services.AddScoped<IAuthService, AuthService>();
         services.AddScoped<IHashingService, HashingService>();
 
         return services;

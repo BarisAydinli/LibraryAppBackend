@@ -3,7 +3,7 @@ using LibraryAppBackend.Domain.Common.Identity;
 
 namespace LibraryAppBackend.Application.Services;
 
-public interface ITokenService
+public interface IAuthService
 {
-    public AccessToken CreateAccessToken(User user, List<OperationClaim> operationClaims);
+    public AccessToken CreateAccessToken(User user, IEnumerable<OperationClaim> operationClaims);
 }

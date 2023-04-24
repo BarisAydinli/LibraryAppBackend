@@ -13,11 +13,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\LibraryAppBackend.Domain\LibraryAppBackend.Domain.csproj" />
+      <Folder Include="Controllers\" />
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers\" />
+      <ProjectReference Include="..\LibraryAppBackend.Application\LibraryAppBackend.Application.csproj" />
     </ItemGroup>
 
 </Project>
